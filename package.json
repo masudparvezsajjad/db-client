@@ -1,0 +1,12 @@
+{
+    "name": "db-client",
+    "version": "0.1.0",
+    "description": "Modern desktop database viewer built with Electron.",
+    "main": "electron/main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^30.0.0"
+    }
+}

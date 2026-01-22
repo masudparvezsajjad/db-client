@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DB Client</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="theme-dark">
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-mark"></span>
+                <div>
+                    <h1>DB Client</h1>
+                    <p>Modern data viewer</p>
+                </div>
+            </div>
+
+            <div class="section-label">Connections</div>
+            <button class="primary-button">+ New Connection</button>
+
+            <nav class="nav">
+                <button class="nav-item is-active">Overview</button>
+                <button class="nav-item">Saved Queries</button>
+                <button class="nav-item">Schemas</button>
+                <button class="nav-item">Favorites</button>
+                <button class="nav-item">Settings</button>
+            </nav>
+
+            <div class="section-label">Recent</div>
+            <div class="recent">
+                <div class="recent-card">
+                    <div>
+                        <span class="badge badge-green">Postgres</span>
+                        <h3>analytics-prod</h3>
+                    </div>
+                    <p>Connected 3 mins ago</p>
+                </div>
+                <div class="recent-card">
+                    <div>
+                        <span class="badge badge-purple">MySQL</span>
+                        <h3>shop-db</h3>
+                    </div>
+                    <p>Connected 2 hours ago</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="search">
+                    <input type="text" placeholder="Search tables, views, queries..." />
+                </div>
+                <div class="topbar-actions">
+                    <button class="ghost-button">Import</button>
+                    <button class="ghost-button">Export</button>
+                    <button class="accent-button">Run Query</button>
+                </div>
+            </header>
+
+            <section class="hero">
+                <div>
+                    <p class="eyebrow">Connected</p>
+                    <h2>analytics-prod</h2>
+                    <p class="subtitle">
+                        Browse schemas, preview tables, and run SQL across
+                        PostgreSQL, MySQL, and more.
+                    </p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <h3>32</h3>
+                        <p>Schemas</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>418</h3>
+                        <p>Tables</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>6</h3>
+                        <p>Active users</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Connection Details</h3>
+                        <span class="badge badge-blue">Read only</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="detail-row">
+                            <span>Host</span>
+                            <strong>db.internal.local</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Database</span>
+                            <strong>analytics</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>User</span>
+                            <strong>readonly</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Latency</span>
+                            <strong>42 ms</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Query Workspace</h3>
+                        <div class="pill">SQL</div>
+                    </div>
+                    <div class="card-body editor">
+                        <code>
+                SELECT * FROM events
+                <br />
+                WHERE created_at &gt; NOW() - INTERVAL '7 days'
+                <br />
+                ORDER BY created_at DESC;
+              </code>
+                        <button class="accent-button full">Run selected query</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card table-card">
+                <div class="card-header">
+                    <h3>Latest Activity</h3>
+                    <button class="ghost-button">View full table</button>
+                </div>
+                <div class="table">
+                    <div class="table-row table-head">
+                        <span>ID</span>
+                        <span>User</span>
+                        <span>Action</span>
+                        <span>Time</span>
+                        <span>Status</span>
+                    </div>
+                    <div class="table-row">
+                        <span>#3921</span>
+                        <span>Alex Morgan</span>
+                        <span>INSERT INTO orders</span>
+                        <span>2 mins ago</span>
+                        <span class="badge badge-green">Success</span>
+                    </div>
+                    <div class="table-row">
+                        <span>#3920</span>
+                        <span>Priya Singh</span>
+                        <span>UPDATE users</span>
+                        <span>11 mins ago</span>
+                        <span class="badge badge-blue">Queued</span>
+                    </div>
+                    <div class="table-row">
+                        <span>#3919</span>
+                        <span>Juan Rivera</span>
+                        <span>SELECT analytics</span>
+                        <span>27 mins ago</span>
+                        <span class="badge badge-purple">Cached</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
