@@ -20,7 +20,7 @@
             </div>
 
             <div class="section-label">Connections</div>
-            <button class="primary-button">+ New Connection</button>
+            <button class="primary-button" id="open-connection-modal">+ New Connection</button>
 
             <nav class="nav">
                 <button class="nav-item is-active">Overview</button>
@@ -167,6 +167,80 @@
                 </div>
             </section>
         </main>
+    </div>
+
+    <div class="modal-backdrop is-hidden" id="connection-modal" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <p class="eyebrow">Add connection</p>
+                    <h3>Database Configuration</h3>
+                </div>
+                <button class="icon-button" id="close-connection-modal" aria-label="Close dialog">
+                    &times;
+                </button>
+            </div>
+
+            <form class="modal-body" id="connection-form">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="conn-name">Connection name</label>
+                        <input id="conn-name" type="text" placeholder="analytics-prod" required />
+                    </div>
+                    <div class="field">
+                        <label for="conn-type">Database type</label>
+                        <select id="conn-type">
+                            <option>PostgreSQL</option>
+                            <option>MySQL</option>
+                            <option>SQLite</option>
+                            <option>SQL Server</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="conn-host">Host</label>
+                        <input id="conn-host" type="text" placeholder="db.internal.local" required />
+                    </div>
+                    <div class="field">
+                        <label for="conn-port">Port</label>
+                        <input id="conn-port" type="number" placeholder="5432" required />
+                    </div>
+                    <div class="field">
+                        <label for="conn-db">Database</label>
+                        <input id="conn-db" type="text" placeholder="analytics" required />
+                    </div>
+                    <div class="field">
+                        <label for="conn-user">User</label>
+                        <input id="conn-user" type="text" placeholder="readonly" required />
+                    </div>
+                    <div class="field">
+                        <label for="conn-password">Password</label>
+                        <input id="conn-password" type="password" placeholder="••••••••" />
+                    </div>
+                    <div class="field">
+                        <label for="conn-ssl">SSL mode</label>
+                        <select id="conn-ssl">
+                            <option>Require</option>
+                            <option>Prefer</option>
+                            <option>Disable</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <div class="field inline">
+                        <label class="toggle">
+                            <input type="checkbox" />
+                            <span class="toggle-track"></span>
+                            <span class="toggle-label">Save credentials</span>
+                        </label>
+                    </div>
+                    <div class="button-row">
+                        <button type="button" class="ghost-button" id="cancel-connection-modal">Cancel</button>
+                        <button type="submit" class="accent-button">Save connection</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="./renderer.js"></script>
