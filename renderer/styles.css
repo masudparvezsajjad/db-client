@@ -536,12 +536,12 @@ body {
     transition: all 0.2s ease;
 }
 
-.toggle input:checked + .toggle-track {
+.toggle input:checked+.toggle-track {
     background: rgba(108, 92, 231, 0.3);
     border-color: rgba(108, 92, 231, 0.5);
 }
 
-.toggle input:checked + .toggle-track::after {
+.toggle input:checked+.toggle-track::after {
     transform: translateX(18px);
     background: #fff;
 }
