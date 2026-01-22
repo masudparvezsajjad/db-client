@@ -9,6 +9,17 @@ A modern, dark-first Electron desktop UI for viewing database content.
 2. Run the desktop app:
    - `npm start`
 
+## Build installers
+
+Install dependencies first with `npm install`, then run one of:
+
+- `npm run dist` (all platforms on the current OS)
+- `npm run build:mac`
+- `npm run build:win`
+- `npm run build:linux`
+
+Artifacts are generated in the `dist` folder.
+
 ## Next steps
 
 - Add real database connections and query execution.

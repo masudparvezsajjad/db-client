@@ -4,9 +4,42 @@
     "description": "Modern desktop database viewer built with Electron.",
     "main": "electron/main.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "build:mac": "electron-builder --mac",
+        "build:win": "electron-builder --win",
+        "build:linux": "electron-builder --linux"
     },
     "devDependencies": {
-        "electron": "^30.0.0"
+        "electron": "^30.0.0",
+        "electron-builder": "^24.13.3"
+    },
+    "build": {
+        "appId": "com.dbclient.app",
+        "productName": "DB Client",
+        "files": [
+            "electron/**/*",
+            "renderer/**/*",
+            "package.json"
+        ],
+        "directories": {
+            "output": "dist"
+        },
+        "mac": {
+            "target": [
+                "dmg"
+            ]
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ]
+        },
+        "linux": {
+            "target": [
+                "AppImage"
+            ]
+        }
     }
 }
