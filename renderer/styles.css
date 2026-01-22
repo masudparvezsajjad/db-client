@@ -333,6 +333,125 @@ body {
     font-size: 13px;
 }
 
+.query-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--surface-strong);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.query-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.query-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.query-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.tab-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-button.is-active,
+.tab-button:hover {
+    background: var(--surface);
+    color: var(--text);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tab-new {
+    padding: 8px 14px;
+}
+
+.query-editor {
+    background: rgba(10, 15, 26, 0.6);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.query-editor__body {
+    position: relative;
+    min-height: 220px;
+    font-family: "JetBrains Mono", "SFMono-Regular", ui-monospace, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.query-highlight {
+    margin: 0;
+    padding: 18px;
+    min-height: 220px;
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #cbd5f5;
+}
+
+.query-highlight code {
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+}
+
+.query-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    padding: 18px;
+    background: transparent;
+    color: transparent;
+    caret-color: #e8eef7;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+.query-input::selection {
+    background: rgba(108, 92, 231, 0.35);
+}
+
+.query-results .card-body {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
 .table-card {
     padding-bottom: 8px;
 }

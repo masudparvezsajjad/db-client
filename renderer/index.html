@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DB Client</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="theme-dark">
@@ -86,6 +88,48 @@
                 </div>
             </section>
 
+            <section class="query-page">
+                <div class="query-header">
+                    <div>
+                        <p class="eyebrow">Query</p>
+                        <h2>SQL Workspace</h2>
+                        <p class="subtitle">
+                            Write, refine, and run SQL with multi-tab support.
+                        </p>
+                    </div>
+                    <div class="query-actions">
+                        <button class="accent-button" id="run-query">Run query</button>
+                    </div>
+                </div>
+
+                <div class="query-tabs">
+                    <div class="tab-list" id="query-tabs"></div>
+                    <button class="ghost-button tab-new" id="new-query-tab">+ New tab</button>
+                </div>
+
+                <div class="query-editor">
+                    <div class="query-editor__body">
+                        <pre class="query-highlight">
+                            <code class="language-sql" id="query-highlight-code"></code>
+                        </pre>
+                        <textarea class="query-input" id="query-input" spellcheck="false"
+                            placeholder="Write your SQL query here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="card query-results">
+                    <div class="card-header">
+                        <h3>Query results</h3>
+                        <span class="pill">Preview</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="muted">
+                            Run a query to preview results here.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <section class="content-grid">
                 <div class="card">
                     <div class="card-header">
@@ -109,23 +153,6 @@
                             <span>Latency</span>
                             <strong>42 ms</strong>
                         </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Query Workspace</h3>
-                        <div class="pill">SQL</div>
-                    </div>
-                    <div class="card-body editor">
-                        <code>
-                SELECT * FROM events
-                <br />
-                WHERE created_at &gt; NOW() - INTERVAL '7 days'
-                <br />
-                ORDER BY created_at DESC;
-              </code>
-                        <button class="accent-button full">Run selected query</button>
                     </div>
                 </div>
             </section>
@@ -243,7 +270,11 @@
         </div>
     </div>
 
-    <script src="./renderer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./renderer.js"></script>
 </body>
 
 </html>
